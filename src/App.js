@@ -9,16 +9,20 @@ const performFetch = (callback) => {
     method: 'GET',
     credentials: 'include'
   })
-    .then(response => response.json())
+    .then(response => {
+
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Request failed with status: ' + response.status);
+      }
+
+    })
     .then(data => {
+
         const array = Object.values(data);
-        array.forEach(element => {
+        callback(array);
 
-          const li = element[0] + ": " + element[1];
-          callback(li);
-          console.log(li);
-
-        });
     })
     .catch(error => {
         console.error('Error: ', error);
@@ -29,10 +33,11 @@ const performFetch = (callback) => {
 function App() {
 
   const [projects, setProjects] = useState([])
+
   useEffect(() => {
 
-    const myCallback = (li)  => {
-      setProjects(li);
+    const myCallback = (element) => {
+      setProjects(element);
     }
     performFetch(myCallback);
 
@@ -47,7 +52,7 @@ function App() {
         </p>
         <p>
           {projects.map((project, index) => {
-            return <li>{project.detalles}</li>
+            return <li key={index}>{project}</li>
           })}
         </p>
         <a
