@@ -6,10 +6,12 @@ Front-end de qgeoidcol-web
 2. Permitir la integración de procesamientos de diferentes proyectos de la división de geodesia del [IGAC](https://geoportal.igac.gov.co/contenido/datos-abiertos-geodesia)
 3. Conformar un equipo de trabajo orientado al desarrollo de software para unificar el procesamiento de datos de la división de geodesia del IGAC
 
-## Contribuyentes
+## Contributors
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
